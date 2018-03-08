@@ -26,6 +26,11 @@
                     </a>
                   </div>
                 </div>
+                <div class="media-right">
+                  <p class="is-rotated-ccw">
+                    PREVIEW
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
     "@fortawesome/fontawesome-free-regular": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@vue/cli": "^3.0.0-beta.6",
     "bulma": "^0.6.2",
     "lodash": "^4.17.5",
     "shortid": "^2.2.8",
