@@ -2,7 +2,7 @@
 // stubbed out card retrival that also allows setting of unique path
 
 import shortid from 'shortid'
-// import _ from 'lodash/fp' // todo: take only what we need
+import _ from 'lodash'
 
 const getCard = (path) => {
   return {
@@ -33,7 +33,7 @@ const getCard = (path) => {
 }
 
 const toUI = dbObj => ({
-  _uid: shortid.generate(),
+  uid: shortid.generate(),
   path: dbObj.path,
   storageType: dbObj.storageType,
   title: dbObj.basicCard.title,
@@ -41,7 +41,7 @@ const toUI = dbObj => ({
   formattedText: dbObj.basicCard.formattedText,
   imageUri: dbObj.basicCard.image.imageUri,
   buttons: dbObj.basicCard.buttons.map(b => ({
-    _uid: shortid.generate(),
+    uid: shortid.generate(),
     title: b.title,
     uri: b.openUriAction.uri
   }))
@@ -66,17 +66,31 @@ const fromUI = uiObj => ({
   }
 })
 
+const copyUI = uiObj => _.cloneDeep(uiObj)
+// Object.assign({}, {
+//   uid: uiObj.uid,
+//   path: uiObj.path,
+//   storageType: uiObj.storageType,
+//   title: uiObj.title,
+//   subtitle: uiObj.subtitle,
+//   formattedText: uiObj.formattedText,
+//   imageUri: uiObj.imageUri,
+//   buttons: uiObj.buttons.slice()
+// })
+
 // const uiSwapButtons = (ia, ib) => (uiObj) => {
 //   let arr = _.slice(uiObj)
 
 export {
   getCard,
   toUI,
-  fromUI
+  fromUI,
+  copyUI
 }
 
 export default {
   getCard,
   toUI,
-  fromUI
+  fromUI,
+  copyUI
 }
