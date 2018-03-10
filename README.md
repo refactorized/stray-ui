@@ -6,7 +6,7 @@ UI mock-up is mostly complete, some pieces of the UI function interactively, but
 
 ## zeit now hosting
 
-This project is deployable via [zeit now](https://zeit.co/now) and is updated periodically at https://stray-ui-cecawyfsnp.now.sh/
+This project is deployable via [zeit now](https://zeit.co/now) and is updated periodically at https://stray-ui.now.sh/
 
 ## Running dev server locally
 
