@@ -59,12 +59,12 @@
             span.icon.is-small
               i.fas.fa-angle-double-down
     .control
-      a.button.is-outlined.is-danger
+      a.button.is-outlined.is-danger(@click="removeButton(index)")
         span.icon.is-small
           i.fas.fa-trash
   .field
     .control
-      a.button
+      a.button(@click="addButton()")
         span.icon.is-small
           i.fas.fa-plus
         span Add Button
@@ -89,6 +89,15 @@
       },
       swap(i,d) {
         this.cardState.buttons = u.arr.swap([i,i+d])(this.cardState.buttons)
+        this.update()
+      },
+      removeButton(i) {
+        this.cardState.buttons = u.arr.snip(i)(this.cardState.buttons)
+        this.update()
+      },
+      addButton() {
+        // perhaps immutability is getting a little out of hand here...
+        this.cardState.buttons = [...this.cardState.buttons, {title: '', uri: ''}]
         this.update()
       }
     }

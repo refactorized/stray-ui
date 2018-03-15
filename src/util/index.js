@@ -1,3 +1,4 @@
+// todo - clean this file up, also just install immutable.hs already
 const between = (min, max) => n => (n < max && n >= min)
 
 // returns a copy of the array A with indices i,j swapped
@@ -11,8 +12,12 @@ const arrSwap = ([i, j]) => A => {
   return B
 }
 
+// returns a copy absent the item at the specified index.
+const arrSnip = (i) => (A) => [ ...A.slice(0, i), ...A.slice(i + 1) ]
+
 export default {
   arr: {
-    swap: arrSwap
+    swap: arrSwap,
+    snip: arrSnip
   }
 }
